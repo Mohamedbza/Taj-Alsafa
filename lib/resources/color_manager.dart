@@ -12,4 +12,8 @@ class ColorManager {
   static Color homebuttonsbackground = const Color.fromRGBO(130, 128, 128, 1); // 008000
   static Color selecteddotcarousel = const Color.fromRGBO(232, 181, 177, 1); // C5C1C1
   static Color unselecteddotcarousel = const Color.fromRGBO(255, 255, 255, 0.9); // FFFFFF
+  static Color returnarrow = const Color.fromRGBO(45, 46, 45, 1); // 000000
+  static Color editprofileappbarbackground = const Color.fromRGBO(197, 193, 193, 0.6); // 000000
+  static Color profilepicturebackground = const Color.fromRGBO(0, 0, 0, 0.35); // FFFFFF
+  static Color savechangesborder = const Color.fromRGBO(197, 193, 193, 0.6); // FFFFFF
 }

@@ -46,7 +46,7 @@ Widget build(BuildContext context) {
   home = const EditProfile();
 
   return MediaQuery(
-    data: MediaQuery.of(context).copyWith(textScaleFactor: 1.5), // Set text scaling
+    data: MediaQuery.of(context).copyWith(textScaleFactor: 1), // Set text scaling
     child: MaterialApp(
       useInheritedMediaQuery: true, // Required for DevicePreview
       locale: DevicePreview.locale(context), // Supports locale simulation
