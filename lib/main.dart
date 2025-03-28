@@ -5,7 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:tadjelsafa/view/authentification/forgetPassword.dart';
 import 'package:tadjelsafa/view/authentification/login.dart';
 import 'package:tadjelsafa/view/home/home.dart';
-import 'package:tadjelsafa/view/introductory/introductory.dart'; 
+import 'package:tadjelsafa/view/introductory/introductory.dart';
+import 'package:tadjelsafa/view/sideMenu/editProfile/edit_profile.dart'; 
 import 'package:tadjelsafa/view/splash/splash.dart';
 
 /// Global cache for preloaded SVGs
@@ -42,7 +43,7 @@ class _MyAppState extends State<MyApp> {
 Widget build(BuildContext context) {
   Widget home;
 
-  home = const Home();
+  home = const EditProfile();
 
   return MediaQuery(
     data: MediaQuery.of(context).copyWith(textScaleFactor: 1.5), // Set text scaling
