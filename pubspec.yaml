@@ -93,7 +93,10 @@ flutter:
         - asset: assets/fonts/ABeeZee-Regular.ttf
     - family: adamina
       fonts:
-        - asset: assets/fonts/Adamina-Regular.ttf    
+        - asset: assets/fonts/Adamina-Regular.ttf  
+    - family: janna
+      fonts:
+        - asset: assets/fonts/Janna-LT-Regular.ttf
      
   #
   # For details regarding fonts from package dependencies,

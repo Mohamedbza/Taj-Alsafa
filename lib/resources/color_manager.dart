@@ -16,4 +16,6 @@ class ColorManager {
   static Color editprofileappbarbackground = const Color.fromRGBO(197, 193, 193, 0.6); // 000000
   static Color profilepicturebackground = const Color.fromRGBO(0, 0, 0, 0.35); // FFFFFF
   static Color savechangesborder = const Color.fromRGBO(197, 193, 193, 0.6); // FFFFFF
+  static Color notificationpicturebackground = const Color.fromRGBO(159, 159, 159, 0.6); // FFFFFF
+  static Color bottomborderpageswipe = const Color.fromRGBO(127, 209, 174, 1); // FFFFFF
 }

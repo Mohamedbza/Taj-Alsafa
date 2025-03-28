@@ -256,7 +256,13 @@ class EditProfile extends StatelessWidget {
                     Container( 
                       decoration: BoxDecoration(
                         color: ColorManager.savechangesborder,
-                        
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.25),
+                            blurRadius: 10,
+                            offset: Offset(0, 0),
+                          )
+                        ]
                       ),
                     width: double.infinity, 
                     child: Padding(
