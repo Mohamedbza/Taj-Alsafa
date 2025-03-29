@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tadjelsafa/resources/color_manager.dart';
+import 'package:tadjelsafa/resources/routes_manager.dart';
+import 'package:tadjelsafa/view/introductory/video_background.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 
@@ -49,6 +51,7 @@ class _IntroductoryState extends State<Introductory> {
               child: Chewie(
             controller: chewieController!,
           )),*/
+          VideoBackground( videoPath: 'assets/videos/introductory.mp4', child: Container(),),
           Container(color: Colors.black54),
          
           Center(
@@ -92,7 +95,13 @@ class _IntroductoryState extends State<Introductory> {
                       ),
                       
                       ),
-                      onPressed: () {},
+                      onPressed: () { 
+                        Navigator.pushNamedAndRemoveUntil(
+  context, 
+  Routes.loginRoute, 
+  (route) => false, // This removes all previous routes
+);
+                      },
                       child: const Text(
                       'Login',
                       style: TextStyle(

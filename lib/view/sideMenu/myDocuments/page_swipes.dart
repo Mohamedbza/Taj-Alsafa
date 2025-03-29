@@ -184,24 +184,138 @@ class _PageSwipeState extends State<PageSwipe> {
 
   Widget _invoice(BuildContext context) { 
      
-    return   Center(
-      child: Text('Invoice Screen', style: TextStyle(
+    return  Padding(
+     padding: const EdgeInsets.symmetric(horizontal: 20,vertical:87 ),
+     child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
+       children: [  
+           Container( width: double.infinity,
+           decoration: BoxDecoration(
+           color: Colors.white,
+           borderRadius: BorderRadius.circular(5),
+           boxShadow: [
+             BoxShadow(
+             color: Colors.black.withOpacity(0.25),
+             blurRadius: 12,
+             offset: Offset(0, 0),
+             ),
+           ],
+           ),
+            
+           child:  Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 23),
+             child: Column( 
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                Text('Invoice Number: 1', style: TextStyle(color: Colors.black, fontSize: 16,fontFamily: 'abel'),),
+                                  SizedBox(height: 5),
+                Text('Request Number: 1', style: TextStyle(color: Colors.black, fontSize: 16,fontFamily: 'abel'),),
+              
+                SizedBox(height: 18),
+                Container(
+                width: double.infinity, 
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorManager.signinbackground,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5), 
+                  ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 7.0),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/images/pdf.svg', 
+                          height: 19,
+                        ),
+                        SizedBox(width: 10),
+                        const Text(
+                        'View File',
+                        style: TextStyle(
                           fontFamily: 'abel',
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),),
-    );
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                )
+               ],
+             ),
+           )),
+           ]
+           )
+           );
   }
 
   Widget _payment(BuildContext context) {
-    return Center(
-      child: Text('Payment Screen', style: TextStyle(
+    return Padding(
+     padding: const EdgeInsets.symmetric(horizontal: 20,vertical:87 ),
+     child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
+       children: [  
+           Container( width: double.infinity,
+           decoration: BoxDecoration(
+           color: Colors.white,
+           borderRadius: BorderRadius.circular(5),
+           boxShadow: [
+             BoxShadow(
+             color: Colors.black.withOpacity(0.25),
+             blurRadius: 12,
+             offset: Offset(0, 0),
+             ),
+           ],
+           ),
+            
+           child:  Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 23),
+             child: Column( 
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                Text('Payment Number: 1', style: TextStyle(color: Colors.black, fontSize: 16,fontFamily: 'abel'),),
+                                  SizedBox(height: 5),
+                Text('Request Number: 1', style: TextStyle(color: Colors.black, fontSize: 16,fontFamily: 'abel'),),
+              
+                SizedBox(height: 18),
+                Container(
+                width: double.infinity, 
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorManager.signinbackground,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5), 
+                  ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 7.0),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/images/pdf.svg', 
+                          height: 19,
+                        ),
+                        SizedBox(width: 10),
+                        const Text(
+                        'View File',
+                        style: TextStyle(
                           fontFamily: 'abel',
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),),
-    );
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                )
+               ],
+             ),
+           )),
+           ]
+           )
+           );
   }
 } 

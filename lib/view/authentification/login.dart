@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tadjelsafa/resources/color_manager.dart';
+import 'package:tadjelsafa/resources/routes_manager.dart';
 
 
 class Login extends StatelessWidget {
@@ -16,7 +17,7 @@ class Login extends StatelessWidget {
               const Text(
               'Sign In',
               style: TextStyle(
-                fontFamily: 'Abel',
+                fontFamily: 'abel',
                 fontSize: 24,
                 color: Colors.black,
               ),
@@ -32,7 +33,7 @@ class Login extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 9),
                 child: TextField(
                 style: const TextStyle(
-                fontFamily: 'ABeeZee',
+                fontFamily: 'abeezee',
                 fontSize: 16,
                 height: 1,
                 ),
@@ -56,7 +57,7 @@ class Login extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 9),
                 child: TextField(
                 style: const TextStyle(
-                fontFamily: 'ABeeZee',
+                fontFamily: 'abeezee',
                 fontSize: 16,
                 height: 1,
                 ),
@@ -74,12 +75,14 @@ class Login extends StatelessWidget {
               Align(
               alignment: Alignment.centerLeft,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.forgotPasswordRoute, );
+                },
                 child: const Text(
                 'Forget Password?',
                 style: TextStyle(
                   color: Colors.black,
-                  fontFamily: 'ABeeZee',
+                  fontFamily: 'abeezee',
                   fontSize: 16,
                   height: 1,
                 ),
@@ -117,4 +120,4 @@ class Login extends StatelessWidget {
       
     );
   }
-}
+} 

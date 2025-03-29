@@ -10,6 +10,7 @@ import 'package:tadjelsafa/view/sideMenu/aboutUs/about_us.dart';
 import 'package:tadjelsafa/view/sideMenu/contactUs/contactUs.dart';
 import 'package:tadjelsafa/view/sideMenu/editProfile/edit_profile.dart';
 import 'package:tadjelsafa/view/sideMenu/myDocuments/my_documents.dart';
+import 'package:tadjelsafa/view/sideMenu/propertyinfo/property_info.dart';
 import 'package:tadjelsafa/view/sideMenu/termsAndConditions/termsAndConditions.dart';
 import 'package:tadjelsafa/view/splash/splash.dart'; 
 class Routes {
@@ -27,6 +28,7 @@ class Routes {
   static const String introductoryRoute = "/introductory";
   static const String notificationsRoute = "/notifications";
   static const String termsAndConditionsRoute = "/termsAndConditions"; 
+  static const String propertyInfoRoute = "/propertyInfo"; 
 }
 
 class RouteGenerator {
@@ -51,12 +53,13 @@ static Route<dynamic> getRoute(RouteSettings routeSettings) {
     case Routes.editProfileRoute:
       return MaterialPageRoute(builder: (_) => EditProfile());
     case Routes.introductoryRoute:
-      return MaterialPageRoute(builder: (_) => Introductory());
+      return MaterialPageRoute(builder: (_) => Introductory()); 
     case Routes.notificationsRoute:
       return MaterialPageRoute(builder: (_) => Notifications());
     case Routes.termsAndConditionsRoute:
-      return MaterialPageRoute(builder: (_) => Termsandconditions());
-
+      return MaterialPageRoute(builder: (_) => Termsandconditions()); 
+      case Routes.propertyInfoRoute:
+        return MaterialPageRoute(builder: (_) => PropertyInfo());
     default:
       return unDefinedRoute();
   }

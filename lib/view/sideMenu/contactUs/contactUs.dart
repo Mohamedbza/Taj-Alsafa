@@ -1,12 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart'; 
-import 'package:tadjelsafa/resources/color_manager.dart'; 
+import 'package:tadjelsafa/resources/color_manager.dart';
+import 'package:url_launcher/url_launcher.dart'; 
 
 class ContactUs extends StatelessWidget {
   const ContactUs({super.key});
+Future<void> _openLink(String url) async {
+  debugPrint('Attempting to open URL: $url');
+  
+  try {
+    final uri = Uri.parse(url);
+    debugPrint('Parsed URI: $uri');
 
+    // Check if URL can be launched
+    final canLaunch = await canLaunchUrl(uri);
+    debugPrint('canLaunchUrl result: $canLaunch');
+
+    if (!canLaunch) {
+      debugPrint('No handler found for URL');
+      throw 'No web browser available to handle the URL';
+    }
+
+    // Force open in browser
+    debugPrint('Launching URL in external browser...');
+    final launched = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    );
+    
+    debugPrint('launchUrl result: $launched');
+    
+    if (!launched) {
+      throw 'Browser failed to open the URL';
+    }
+  } catch (e, stack) {
+    debugPrint('Error opening URL: $e');
+    debugPrint('Stack trace: $stack');
+     
+  }
+}
   @override
   Widget build(BuildContext context) {
+    
     return  Scaffold(backgroundColor: Colors.white,
       appBar: AppBar(backgroundColor: ColorManager.editprofileappbarbackground,
         title: Text('Contact Us', style: TextStyle(color: Colors.black , fontSize: 18,fontFamily: 'abel'),),
@@ -50,7 +85,7 @@ class ContactUs extends StatelessWidget {
                             IconButton(
                               padding: const EdgeInsets.all(8),
                               icon: Image.asset('assets/images/fb.png', width: 18, height: 18),
-                              onPressed: () {
+                              onPressed: () {_openLink('https://www.facebook.com/TajAlSafa');
                               // Add Facebook link/action here
                               },
                             ),
@@ -60,7 +95,7 @@ class ContactUs extends StatelessWidget {
                             IconButton(
                               padding: const EdgeInsets.all(8),
                               icon: Image.asset('assets/images/ig.png', width: 18, height: 18),
-                              onPressed: () {
+                              onPressed: () {_openLink("https://www.instagram.com/tajalsafa/");
                               // Add Instagram link/action here
                               },
                             ),
@@ -70,7 +105,7 @@ class ContactUs extends StatelessWidget {
                             IconButton(
                               padding: const EdgeInsets.all(8),
                               icon: Image.asset('assets/images/x.png', width: 18, height: 18),
-                              onPressed: () {
+                              onPressed: () { _openLink("https://x.com/tajalsafaCo");
                               // Add Twitter/X link/action here
                               },
                             ),
@@ -80,7 +115,7 @@ class ContactUs extends StatelessWidget {
                             IconButton(
                               padding: const EdgeInsets.all(8),
                               icon: Image.asset('assets/images/yt.png', width: 18, height: 18),
-                              onPressed: () {
+                              onPressed: () {_openLink("https://www.youtube.com/@TajAlSafa");
                               // Add YouTube link/action here
                               },
                             ),
@@ -90,7 +125,7 @@ class ContactUs extends StatelessWidget {
                             IconButton(
                               padding: const EdgeInsets.all(8),
                               icon: Image.asset('assets/images/in.png', width: 18, height: 18),
-                              onPressed: () {
+                              onPressed: () {_openLink("https://www.linkedin.com/company/tajalsafa/");
                               // Add LinkedIn link/action here
                               },
                             ),

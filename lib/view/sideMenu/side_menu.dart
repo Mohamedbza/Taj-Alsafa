@@ -96,7 +96,7 @@ class SideMenu extends StatelessWidget {
                               Icons.edit,
                               size: 14,
                             ),
-                            onPressed: () {
+                            onPressed: () {Navigator.pushNamed(context, Routes.editProfileRoute);
                               // Add upload functionality here
                             },
                           ),
@@ -129,7 +129,7 @@ _button("About Us", () {
    Navigator.pushNamed(context, Routes.aboutUsRoute);
 }),
 SizedBox(height: 5,),
-_button("Property Info", () {Navigator.pushNamed(context, Routes.aboutUsRoute);}),
+_button("Property Info", () {Navigator.pushNamed(context, Routes.propertyInfoRoute);}),
 SizedBox(height: 5,),
 _button("Terms And Conditions", () {Navigator.pushNamed(context, Routes.termsAndConditionsRoute);}),
 SizedBox(height: 5,),

@@ -11,17 +11,16 @@ class Forgetpassword extends StatelessWidget {
     appBar: AppBar(
                   backgroundColor: Colors.transparent,
                   elevation: 0,
-                  leading: Transform.translate(offset: const Offset(25,0),
-                    child: ClipOval(
-                      child: Container(
-                      color: Colors.white.withOpacity(0.25),
-                      child: IconButton(
-                        onPressed: (){
-                        Navigator.pop(context);
-                        }, 
-                        icon: SvgPicture.asset('assets/images/leftarrow.svg')
-                      ),
-                      ),
+                  leading: Padding(
+                    padding: const EdgeInsets.only(left: 25.0),
+                    child: Container(
+                    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withOpacity(0.25)),
+                    child: IconButton(
+                      onPressed: (){
+                      Navigator.pop(context);
+                      }, 
+                      icon: SvgPicture.asset('assets/images/leftarrow.svg')
+                    ),
                     ),
                   ),
                   ),
@@ -33,7 +32,7 @@ class Forgetpassword extends StatelessWidget {
               const Text(
               'Please Enter Your Email To Retrieve Your Password.',
               style: TextStyle(
-                fontFamily: 'Abel',
+                fontFamily: 'abel',
                 fontSize: 16,
                 color: Colors.black,
               ),
@@ -80,7 +79,7 @@ class Forgetpassword extends StatelessWidget {
                     child: const Text(
                     'Recover Password',
                     style: TextStyle(
-                      fontFamily: 'Abel',
+                      fontFamily: 'abel',
                       fontSize: 16,
                       color: Colors.black,
                     ),

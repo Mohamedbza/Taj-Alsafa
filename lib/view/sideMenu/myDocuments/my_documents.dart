@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart'; 
+import 'package:flutter/material.dart'; 
 import 'package:tadjelsafa/resources/color_manager.dart';
 import 'package:tadjelsafa/view/sideMenu/myDocuments/page_swipes.dart'; 
 

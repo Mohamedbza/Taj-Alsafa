@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
 Widget build(BuildContext context) {
   Widget home;
 
-  home = const Home();
+  home = const Splash();
 
   return MediaQuery(
     data: MediaQuery.of(context).copyWith(textScaleFactor: 1), // Set text scaling

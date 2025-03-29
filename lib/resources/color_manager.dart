@@ -26,4 +26,5 @@ class ColorManager {
   static Color yoursuggestionstext = const Color.fromRGBO(159, 159, 159, 1); // FFFFFF
   static Color drawerbackground = const Color.fromRGBO(242, 255, 252, 0.6); // FFFFFF
   static Color dividertwo = const Color.fromRGBO(140, 131, 131, 1); // FFFFFF
+  static Color realestatebtn = const Color.fromRGBO(255, 255, 255, 0.25); // FFFFFF
 }
