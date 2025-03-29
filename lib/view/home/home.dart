@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tadjelsafa/resources/color_manager.dart';
+import 'package:tadjelsafa/resources/routes_manager.dart';
+import 'package:tadjelsafa/view/sideMenu/side_menu.dart';
 import 'package:tadjelsafa/view/ui/carousel.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>(); // Create a GlobalKey
+  @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(backgroundColor: ColorManager.homebackground,
+        key: _scaffoldKey, // Assign the key to Scaffold
+         drawer: SideMenu(),
+      appBar: AppBar(backgroundColor: ColorManager.homebackground, automaticallyImplyLeading: false,
         title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
               icon: const Icon(Icons.menu_rounded , size: 36,),
-              onPressed: () {},
+              onPressed: () {_scaffoldKey.currentState?.openDrawer();},
             ),
            Padding(
              padding: const EdgeInsets.fromLTRB(0, 0, 0, 11),
@@ -26,7 +36,8 @@ class Home extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.notifications , size: 39,),
-                  onPressed: () {},
+                  onPressed: () { Navigator.pushNamed(context, Routes.notificationsRoute);
+ },
                 ),
                 Positioned(
                   right: 3,
@@ -64,7 +75,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 17),
               Text( 'Choose Your Requirement',
                 style: TextStyle(
-                  fontFamily: 'Abel',
+                  fontFamily: 'abel',
                   fontSize: 18,
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
@@ -103,7 +114,7 @@ class Home extends StatelessWidget {
                         child: const Text(
                         'My Tickets',
                         style: TextStyle(
-                          fontFamily: 'Abel',
+                          fontFamily: 'abel',
                           fontSize: 16,
                           color: Colors.black,
                         ),
@@ -128,7 +139,7 @@ class Home extends StatelessWidget {
                         child: const Text(
                         'My Requests',
                         style: TextStyle(
-                          fontFamily: 'Abel',
+                          fontFamily: 'abel',
                           fontSize: 16,
                           color: Colors.black,
                         ),
@@ -153,7 +164,7 @@ class Home extends StatelessWidget {
                         child: const Text(
                         'Handing Over',
                         style: TextStyle(
-                          fontFamily: 'Abel',
+                          fontFamily: 'abel',
                           fontSize: 16,
                           color: Colors.black,
                         ),

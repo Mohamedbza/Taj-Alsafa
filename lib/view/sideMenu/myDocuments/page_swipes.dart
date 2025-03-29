@@ -51,9 +51,9 @@ class _PageSwipeState extends State<PageSwipe> {
                     });
                   },
                   children: [
-                    _buildProfilePage(context),
-                    _buildWorkPage(context),
-                    _buildSettingsPage(context),
+                    _quotatation(context),
+                    _invoice(context),
+                    _payment(context),
                   ],
                 ),
               ),
@@ -66,99 +66,142 @@ class _PageSwipeState extends State<PageSwipe> {
             right:  0,
             child: Container(
               decoration: BoxDecoration(
-                color: ColorManager.editprofileappbarbackground
-                
+              color: ColorManager.editprofileappbarbackground,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,
-                children: List.generate(toolbar.length, (index) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        currentPage = index;
-                      });
-                      pageController.jumpToPage(index); // Change the page
-                    },
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 500),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: currentPage == index
-                                ? ColorManager.bottomborderpageswipe
-                                : Colors.transparent,
-                            width: 5.0,
-                          ),
-                        ),
-                          
-                      ),
-                      child: Text(
-                        toolbar[index],textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'abel', 
-                          color: Colors.black, // Text color for all items
-                        ),
-                      ),
+              children: List.generate(toolbar.length, (index) {
+                return Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                  setState(() {
+                    currentPage = index;
+                  });
+                  pageController.jumpToPage(index); // Change the page
+                  },
+                  child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 500),
+                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                  decoration: BoxDecoration(
+                    border: Border(
+                    bottom: BorderSide(
+                      color: currentPage == index
+                        ? ColorManager.bottomborderpageswipe
+                        : Colors.white,
+                      width: 3.0,
                     ),
-                  );
-                }),
+                    ),
+                  ),
+                  child: Text(
+                    toolbar[index],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'abel',
+                    color: Colors.black,
+                    ),
+                  ),
+                  ),
+                ),
+                );
+              }),
               ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildProfilePage(BuildContext context) {
-
-    return Padding(padding: EdgeInsets.only(top: 100),
-      child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
-        children: [ 
-           
-           
-           
             
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildWorkPage(BuildContext context) { 
+  Widget _quotatation(BuildContext context) {
+
+    return Padding(
+     padding: const EdgeInsets.symmetric(horizontal: 20,vertical:87 ),
+     child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
+       children: [  
+           Container( width: double.infinity,
+           decoration: BoxDecoration(
+           color: Colors.white,
+           borderRadius: BorderRadius.circular(5),
+           boxShadow: [
+             BoxShadow(
+             color: Colors.black.withOpacity(0.25),
+             blurRadius: 12,
+             offset: Offset(0, 0),
+             ),
+           ],
+           ),
+            
+           child:  Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 23),
+             child: Column( 
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                Text('Quotation Number: 1', style: TextStyle(color: Colors.black, fontSize: 16,fontFamily: 'abel'),),
+                                  SizedBox(height: 5),
+                Text('Request Number: 1', style: TextStyle(color: Colors.black, fontSize: 16,fontFamily: 'abel'),),
+              
+                SizedBox(height: 18),
+                Container(
+                width: double.infinity, 
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorManager.signinbackground,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5), 
+                  ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 7.0),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/images/pdf.svg', 
+                          height: 19,
+                        ),
+                        SizedBox(width: 10),
+                        const Text(
+                        'View File',
+                        style: TextStyle(
+                          fontFamily: 'abel',
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                )
+               ],
+             ),
+           )),
+           ]
+           )
+           );
+  }
+
+  Widget _invoice(BuildContext context) { 
      
-    return   Padding(
-      padding: const EdgeInsets.only(top: 80.0),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [ 
-          ],
-        ),
-      ),
+    return   Center(
+      child: Text('Invoice Screen', style: TextStyle(
+                          fontFamily: 'abel',
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),),
     );
   }
 
-  Widget _buildSettingsPage(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        // Determine the width and height of the available space 
-        // ignore: unused_local_variable 
-
-        return Padding(
-          padding: const EdgeInsets.fromLTRB(20,100,20,20),
-          child: Container(
-            width: 250,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.end,
-              children: [ 
-              ],
-            ),
-          ),
-        );
-      },
+  Widget _payment(BuildContext context) {
+    return Center(
+      child: Text('Payment Screen', style: TextStyle(
+                          fontFamily: 'abel',
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),),
     );
   }
 } 

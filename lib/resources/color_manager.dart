@@ -18,4 +18,12 @@ class ColorManager {
   static Color savechangesborder = const Color.fromRGBO(197, 193, 193, 0.6); // FFFFFF
   static Color notificationpicturebackground = const Color.fromRGBO(159, 159, 159, 0.6); // FFFFFF
   static Color bottomborderpageswipe = const Color.fromRGBO(127, 209, 174, 1); // FFFFFF
+  static Color aboutusbackground = const Color.fromRGBO(217, 217, 217, 0.6); // FFFFFF
+  static Color infoscontainer = const Color.fromRGBO(0, 0, 0, 0.6); // FFFFFF
+  static Color divider = const Color.fromRGBO(0, 0, 0, 0.1); // FFFFFF
+  static Color yoursuggestionsbackground = const Color.fromRGBO(217, 217, 217, 1); // FFFFFF
+  static Color yoursuggestionsborder = const Color.fromRGBO(133, 127, 127, 1); // FFFFFF
+  static Color yoursuggestionstext = const Color.fromRGBO(159, 159, 159, 1); // FFFFFF
+  static Color drawerbackground = const Color.fromRGBO(242, 255, 252, 0.6); // FFFFFF
+  static Color dividertwo = const Color.fromRGBO(140, 131, 131, 1); // FFFFFF
 }

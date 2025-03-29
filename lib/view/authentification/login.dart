@@ -87,7 +87,7 @@ class Login extends StatelessWidget {
               ),
               ),
               SizedBox(height: 15),
-                Container(
+                SizedBox(
                 width: double.infinity, 
                 child: ElevatedButton(
                   onPressed: () {},
@@ -103,7 +103,7 @@ class Login extends StatelessWidget {
                     child: const Text(
                     'Sign In',
                     style: TextStyle(
-                      fontFamily: 'Abel',
+                      fontFamily: 'abel',
                       fontSize: 16,
                       color: Colors.black,
                     ),
